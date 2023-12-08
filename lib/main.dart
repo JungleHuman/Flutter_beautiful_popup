@@ -100,7 +100,7 @@ class BeautifulPopup {
   BeautifulPopup({
     required BuildContext context,
     required Type? template,
-  })   : _context = context,
+  })  : _context = context,
         _template = template {
     primaryColor = instance.primaryColor; // Get the default primary color.
   }
@@ -124,7 +124,7 @@ class BeautifulPopup {
     final illustrationData = await rootBundle.load(instance.illustrationKey);
     final buffer = illustrationData.buffer.asUint8List();
     img.Image? asset;
-    asset = img.readPng(buffer);
+    asset = img.decodePng(buffer);
     if (asset != null) {
       img.adjustColor(
         asset,
@@ -140,8 +140,9 @@ class BeautifulPopup {
         alpha: 0,
       );
     }
-    final paint = await PaintingBinding.instance?.instantiateImageCodec(
-        asset != null ? Uint8List.fromList(img.encodePng(asset)) : buffer);
+    final paint = await PaintingBinding.instance?.instantiateImageCodecWithSize(
+        await ImmutableBuffer.fromUint8List(
+            asset != null ? Uint8List.fromList(img.encodePng(asset)) : buffer));
     final nextFrame = await paint?.getNextFrame();
     _illustration = nextFrame?.image;
     return this;
