@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               Text(
                 'All Templates:',
-                style: Theme.of(context).textTheme.headline4?.merge(
+                style: Theme.of(context).textTheme.headlineMedium?.merge(
                       TextStyle(
                         backgroundColor: Colors.transparent,
                       ),
@@ -174,7 +174,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget get body {
-    final exampleCode = ''' 
+    final exampleCode = '''
 final popup = BeautifulPopup(
   context: context,
   template: ${activeDemo?.instance.runtimeType ?? '// Select a template in right'},
@@ -210,7 +210,7 @@ popup.show(
                     margin: EdgeInsets.fromLTRB(20, 20, 10, 10),
                     child: Text(
                       '# Usage',
-                      style: Theme.of(context).textTheme.headline4?.merge(
+                      style: Theme.of(context).textTheme.headlineMedium?.merge(
                             TextStyle(
                               color: Colors.black54,
                               backgroundColor: Colors.transparent,

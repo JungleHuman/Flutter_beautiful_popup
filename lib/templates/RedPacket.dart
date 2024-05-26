@@ -39,7 +39,8 @@ class TemplateRedPacket extends BeautifulPopupTemplate {
             options.title,
             maxLines: 1,
             style: TextStyle(
-              fontSize: Theme.of(options.context).textTheme.headline6?.fontSize,
+              fontSize:
+                  Theme.of(options.context).textTheme.headlineSmall?.fontSize,
               color: Colors.white,
               fontWeight: FontWeight.bold,
             ),
@@ -54,7 +55,8 @@ class TemplateRedPacket extends BeautifulPopupTemplate {
         ? AutoSizeText(
             options.content,
             minFontSize:
-                Theme.of(options.context).textTheme.headline6?.fontSize ?? 12,
+                Theme.of(options.context).textTheme.headlineSmall?.fontSize ??
+                    12,
             style: TextStyle(
               color: Colors.white.withOpacity(0.95),
             ),

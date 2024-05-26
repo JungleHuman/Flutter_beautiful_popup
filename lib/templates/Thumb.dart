@@ -37,7 +37,8 @@ class TemplateThumb extends BeautifulPopupTemplate {
           options.title,
           maxLines: 1,
           style: TextStyle(
-            fontSize: Theme.of(options.context).textTheme.headline6?.fontSize,
+            fontSize:
+                Theme.of(options.context).textTheme.headlineSmall?.fontSize,
             color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
